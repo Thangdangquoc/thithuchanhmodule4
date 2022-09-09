@@ -14,7 +14,7 @@ function displayTable(data){
     let result = ""
     for (let i = 0; i < data.length; i++) {
         result +="<tr >"
-        result+="<td >"+ i+1 +"</td>"
+        result+="<td >"+ (i+1) +"</td>"
         result+="<td><a onclick='showEditForm2("+data[i].id+")'>"+ data[i].name +"</a></td>"
         result+="<td>"+ data[i].country.name +"</td>"
         result+="<td><button onclick='showEditForm("+data[i].id+")'>Update</button></td>"
@@ -131,6 +131,29 @@ function showEditForm2(id){
         url: "http://localhost:8080/province/" + id,
         success: function (data) {
             idProvince = data.id;
+            localStorage.setItem("id",data.id),
+            document.getElementById("name2").value = data.name
+            document.getElementById("country2").value = data.country.name
+            document.getElementById("area2").value = data.area
+            document.getElementById("population2").value = data.population
+            document.getElementById("gdp2").value = data.gdp
+            document.getElementById("introduce2").value = data.introduce
+            listCountry()
+        }
+    })
+    $('#exampleModal2').modal('show');
+
+}
+
+
+
+
+function editDetail(){
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/province/" + localStorage.getItem(),
+        success: function (data) {
+            idProvince = data.id;
             document.getElementById("name2").value = data.name
             document.getElementById("country2").value = data.country.name
             document.getElementById("area2").value = data.area
@@ -142,6 +165,8 @@ function showEditForm2(id){
     })
     $('#exampleModal2').modal('show');
 }
+
+
 
 
 

@@ -77,7 +77,7 @@
                     <input type="text" id="name" class="form-control">
                     <label>Country</label><br>
                     <label><select id="country"></select></label><br>
-                    <label>Price</label>
+                    <label>Area</label>
                     <input type="text" id="area" class="form-control">
                     <label>Population</label>
                     <input type="text" id="population" class="form-control">
@@ -112,7 +112,7 @@
                     <input type="text" id="name1" class="form-control">
                     <label>Country</label><br>
                     <label><select id="country1"></select></label><br>
-                    <label>Price</label>
+                    <label>Area</label>
                     <input type="text" id="area1" class="form-control">
                     <label>Population</label>
                     <input type="text" id="population1" class="form-control">
@@ -141,22 +141,22 @@
             <div class="modal-body">
                 <form id="editForm1">
                     <label>Name</label>
-                    <input type="text" id="name2" class="form-control" readonly>
+                    <input type="text" id="name2" class="form-control"  readonly>
                     <label>Country</label><br>
-                    <label><input id="country2" readonly></label><br>
+                    <label><input id="country2" class="form-control" readonly</label><br>
                     <label>Price</label>
-                    <input type="text" id="area2" class="form-control" readonly>
+                    <input type="text" id="area2" class="form-control" readonly >
                     <label>Population</label>
                     <input type="text" id="population2" class="form-control" readonly>
                     <label>GDP</label>
                     <input type="text" id="gdp2" class="form-control" readonly>
                     <label>Introduce</label>
-                    <input type="text" id="introduce2" class="form-control" readonly>
+                    <input type="text" id="introduce2" class="form-control" readonly >
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick='deleteComfirm()' >Delete</button>
-                <button type="button" class="btn btn-primary" onclick="updateProvince()">Update</button>
+                <button type="button" class="btn btn-secondary" onclick='deleteComfirm(idProvince)'>Delete</button>
+                <button type="button" class="btn btn-primary" onclick="editDetail()">Update</button>
             </div>
         </div>
     </div>
