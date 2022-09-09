@@ -150,20 +150,25 @@ function showEditForm2(id){
 
 function editDetail(){
     $.ajax({
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
         type: "GET",
-        url: "http://localhost:8080/province/" + localStorage.getItem(),
+        url: "http://localhost:8080/province/" + localStorage.getItem("id"),
         success: function (data) {
             idProvince = data.id;
-            document.getElementById("name2").value = data.name
-            document.getElementById("country2").value = data.country.name
-            document.getElementById("area2").value = data.area
-            document.getElementById("population2").value = data.population
-            document.getElementById("gdp2").value = data.gdp
-            document.getElementById("introduce2").value = data.introduce
+            document.getElementById("name1").value = data.name
+            document.getElementById("country1").value = data.country.name
+            document.getElementById("area1").value = data.area
+            document.getElementById("population1").value = data.population
+            document.getElementById("gdp1").value = data.gdp
+            document.getElementById("introduce1").value = data.introduce
             listCountry()
+            $('#exampleModal1').modal('show');
         }
     })
-    $('#exampleModal2').modal('show');
+
 }
 
 
